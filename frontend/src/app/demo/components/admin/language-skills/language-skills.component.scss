@@ -1,0 +1,27 @@
+.search-container {
+    position: relative;
+    width: 400px;
+    margin: 20px;
+}
+.search-container input[type="search"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #999292;
+    border-radius: 4px;
+    padding-left: 30px; /* Espace pour l'icône à gauche */
+    padding-right: 30px; /* Espace pour l'icône à droite */
+    box-sizing: border-box;
+}
+.search-container .left-icon,
+.search-container .right-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; /* Curseur pointer pour indiquer qu'il est cliquable */
+}
+.search-container .left-icon {
+    left: 10px; /* Position de l'icône à gauche */
+}
+.search-container .right-icon {
+    right: 10px; /* Position de l'icône à droite */
+}

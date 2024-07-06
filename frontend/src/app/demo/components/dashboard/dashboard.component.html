@@ -1,0 +1,76 @@
+<label style="color: blue; font-weight: bold;">Recherche par mots-clés</label>
+<br><br>
+<span class="p-input-icon-left" style="box-shadow: 0 200px 4000px rgba(0, 0, 0, 0.1);">
+    <i class="pi pi-search"></i>
+    <input type="search" pInputText placeholder="Recherche par mots-clés" style="width: 200px; border: none;">
+</span>
+
+
+<br><br><br>
+<label style="color: blue; font-weight: bold;">Recherche par mots-clés</label>
+<br><br>
+
+<style>
+    .search-container {
+        position: relative;
+        width: 400px;
+        margin: 20px;
+    }
+    .search-container input[type="search"] {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #999292;
+        border-radius: 4px;
+        padding-left: 30px; /* Espace pour l'icône à gauche */
+        padding-right: 30px; /* Espace pour l'icône à droite */
+        box-sizing: border-box;
+    }
+    .search-container .left-icon,
+    .search-container .right-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer; /* Curseur pointer pour indiquer qu'il est cliquable */
+    }
+    .search-container .left-icon {
+        left: 10px; /* Position de l'icône à gauche */
+    }
+    .search-container .right-icon {
+        right: 10px; /* Position de l'icône à droite */
+    }
+</style>
+
+<div class="search-container">
+    <input type="search" pInputText placeholder="Recherche par mots-clés">
+    <i class="pi pi-search left-icon"></i> <!-- Icône 1 placée à gauche -->
+    <i class="pi pi-sliders-h right-icon"></i> <!-- Icône 2 placée à droite -->
+</div>
+
+
+
+
+
+<p-card >
+    <label>Mots clés : </label>
+
+    <div class="search-container">
+        <input type="search" pInputText placeholder="Recherche par mots-clés">
+        <i class="pi pi-search left-icon"></i> <!-- Icône 1 placée à gauche -->
+    </div>
+    <label>lieux de travail : </label>
+
+    <div class="search-container">
+        <input type="search" pInputText placeholder="Recherche par mots-clés">
+        <i class="pi pi-search left-icon"></i> <!-- Icône 1 placée à gauche -->
+    </div>
+    <label>Les niveau d'études :  : </label>
+
+    
+
+</p-card>
+
+
+
+
+
+

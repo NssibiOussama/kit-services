@@ -1,0 +1,58 @@
+
+
+
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden background-color ">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <img src="assets/demo/images/login/job_success_favicon.jpg" alt="Keep in touch" style="width: 30px;">
+        <div style="height: 20px;"></div>
+
+
+        <div style="border-radius:36px; padding:0.3rem; background: linear-gradient(180deg, rgba(237, 124, 11, 0.712) 10%, rgba(247, 149, 48, 0) 30%);">
+            <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <div class="text-900 text-3xl font-medium mb-3">KitSuccess - Connexion</div>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                    <div>
+                        <span *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched"
+                            style="font-size: 12px; color: red">
+                            * Adresse e-mail est requis<br>
+                        </span>
+                        <input id="email1" type="email" placeholder="Adresse e-mail" pInputText
+                            class="w-full md:w-30rem mb-5" style="padding:1rem" [formControlName]="'email'" required>
+
+                        <br>
+                        <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched"
+                        style="font-size: 12px; color: red">
+                        * Mot de passe est requis <br>
+                    </span>
+                        <p-password id="password1" placeholder="Mot de passe" [toggleMask]="true" styleClass="mb-5"
+                            inputStyleClass="w-full p-3 md:w-30rem" [formControlName]="'password'" id="password"
+                            name="password" required></p-password>
+                            <br>
+                            <div class="flex align-items-center">
+                                <a class="font-medium no-underline ml-2 text-right cursor-pointer"
+                                    style="color: var(--primary-color)" [routerLink]="['/sendEmail']">Mot de passe oublié ?</a>
+                            </div>
+                            <br>
+                        <p-toast></p-toast>
+                        <button pButton pRipple label="Se connecter" class="w-full p-3 text-xl" style="background-color: #376872;"></button>
+                        <br>
+                        <br>
+                        <br>  
+                        <p-toast></p-toast>              
+                        <button pButton pRipple icon="pi pi-user-plus" label="Créer un compte" class="p-button-text" [routerLink]="['/register']"></button>
+                        
+                    </div>
+                    
+                </form>
+            </div>
+
+
+
+            
+
+        </div>
+    </div>
+</div>

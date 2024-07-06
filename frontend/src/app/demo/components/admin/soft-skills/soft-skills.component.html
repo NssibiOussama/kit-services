@@ -1,0 +1,78 @@
+<label style="color: blue; font-weight: bold;">Recherche par mots-clés</label>
+<br><br>
+
+<div class="search-container">
+    <input type="search" pInputText placeholder="Recherche par mots-clés" [(ngModel)]="keywords" (ngModelChange)="searchCvData()">
+    <i class="pi pi-search left-icon"></i> <!-- Icône 1 placée à gauche -->
+    <i class="pi pi-sliders-h right-icon"></i> <!-- Icône 2 placée à droite -->
+</div>
+
+<div *ngIf="cvData ">
+    <div *ngFor="let cv of cvData; let i = index">
+        <div class="grid">
+          <div class="col-12">
+            <div class="card">
+              <h5>{{ cvKeys[i] }}</h5>
+            <p-table [value]="cv.softskills" [paginator]="true" [rows]="5">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 12rem">Found In</th>
+                        <th style="min-width: 12rem">Last Used</th>
+                        <th style="min-width: 12rem">Level</th>
+                        <th style="min-width: 12rem">Skill</th>
+                        <th style="min-width: 12rem">Skill Code</th>
+                        <th style="min-width: 12rem">Skill Description</th>
+                        <th style="min-width: 12rem">Years</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-comp>
+                    <tr>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.foundIn || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.lastUsed || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.level || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.skill || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.skillCode || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.skillDescription || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container>
+                                <div>{{ comp.years || 'empty' }}</div>
+                            </ng-container>
+                        </td>
+                    </tr>
+                </ng-template>
+                
+            </p-table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div *ngIf="!cvData || cvData.length === 0">
+    No data available.
+</div>
+
+

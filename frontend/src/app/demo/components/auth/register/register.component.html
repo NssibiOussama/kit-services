@@ -1,0 +1,72 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <img src="assets/demo/images/login/logo.png" alt="Keep in touch" style="width: 180px;">
+        <div style="height: 20px;"></div>
+        
+            <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, rgba(237, 124, 11, 0.712) 10%, rgba(247, 149, 48, 0) 30%);">
+            <div class="w-full surface-card py-7 px-5 sm:px-6" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <div class="text-900 text-3xl font-medium mb-3">KitSucceess - Inscription</div>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                    <div>
+
+                        <div>
+                            <label for="Username" class="block text-900 text-xl font-medium mb-2">Nom d'utilisateur</label>
+                            <span *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched"
+                                style="font-size: 12px; color: red">
+
+                                * Nom d'utilisateur non valide. Veuillez entrer un nom d'utilisateur correct. <br>
+                                * Veuillez saisir un nom d'utilisateur contenant entre 6 et 24 caractères. <br>
+                            </span>
+                            <input id="Username" type="text" placeholder="Nom d'utilisateur
+                            " pInputText
+                                class="w-full md:w-30rem mb-5" style="padding:1rem" [formControlName]="'username'"
+                                required> <br>
+
+                        </div>
+
+                        <label for="email1" class="block text-900 text-xl font-medium mb-2">Adresse e-mail</label>
+                        <span *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched"
+                            style="font-size: 12px; color: red">
+                            * Veuillez fournir une adresse e-mail valide. <br>
+                        </span>
+                        <input id="email1" type="text" placeholder="Adresse e-mail" pInputText
+                            class="w-full md:w-30rem mb-5" style="padding:1rem" [formControlName]="'email'" id="email"
+                            name="email" required> <br>
+
+
+                        <label for="password" class="block text-900 font-medium text-xl mb-2">Saisissez votre mot de passe</label>
+                        <span *ngIf="!signupForm.get('password')?.valid && signupForm.get('password')?.touched"
+                            style="font-size: 12px; color: red">
+                            * Le mot de passe doit comporter au moins 8 caractères. <br>
+                            * Le mot de passe doit inclure des lettres minuscules, des lettres majuscules et des chiffres. <br>
+                        </span>
+                        <p-password id="password"  placeholder="Mot de passe" [toggleMask]="true"
+                            styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem" [formControlName]="'password'"
+                             name="password" required></p-password>
+
+
+                        <label for="cpassword" class="block text-900 font-medium text-xl mb-2">Confirmer votre mot de passe </label>
+                        <span *ngIf="!signupForm.get('cpassword')?.valid && signupForm.get('cpassword')?.touched"
+                            style="font-size: 12px; color: red">
+                            * Les mots de passe ne correspondent pas. <br>
+                        </span>
+                        <p-password id="cpassword" placeholder="Confirmer votre mot de passe" [toggleMask]="true"
+                            styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem" [formControlName]="'cpassword'"
+                              name="cpassword" required></p-password>
+
+
+
+                        <p-toast></p-toast>
+                        <button pButton type="submit" pRipple label="Confirmer" class="w-full p-3 text-xl" style="background-color: #376872;" ></button><br>
+                        <button pButton pRipple icon="pi pi-arrow-left" label="Retour" class="p-button-text" [routerLink]="['/']"></button>
+
+
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
